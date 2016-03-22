@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Talus</title>
+   <!-- Meta -->
+  <meta content="Talus" property="og:title">
+  <meta content="Talus is a bash script to automate download &amp; setting up your Mac OS X development environment." name="description">
+  <!-- Flatdoc theme -->
+  <link href='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/style.css' rel='stylesheet'>
+  <link  href='http://ricostacruz.com/flatdoc/support/theme.css' rel='stylesheet'>
+  <style type="text/css">
+  video {
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+  }
+  .in {
+    background: radial-gradient( circle at top, rgba(81, 48, 87, 0.4), rgba(25, 31, 44, 1) );
+  }
+  body:not(.big-h3) .content h3 {
+    font-size: 1.3em;
+  }
+  .header,
+  .content-root {
+    z-index: 1;
+  }
+  .header {
+    background-color: rgb(25, 31, 44);
+    text-shadow: none;
+    text-transform: uppercase;
+  }
+  .header h1 {
+    color: #fff;
+  }
+  .header li a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .header li a:hover {
+    color: #2badad;
+  }
+  .menu a,
+  .content-root a {
+    color: rgb(81, 48, 85);
+  }
+  .menu a {
+    text-transform: uppercase;
+  }
+  .content-root a {
+    text-decoration: underline;
+  }
+  .content-root a:hover {
+    color: #2badad;
+  }
+  .content code {
+    background: rgba(81, 48, 87,.1);
+  }
+  </style>
+  <!-- Flatdoc -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/legacy.js'></script>
+  <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/flatdoc.js'></script>
+  <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/script.js'></script>
+ 
+  <!-- Initializer -->
+  <script>
+    Flatdoc.run({
+      fetcher: Flatdoc.github('juanbrujo/Talus')
+    });
+  </script>
+</head>
+<body role='flatdoc'>
+  <div class='title-area title-card'>
+    <div class='in'>
+      <div class='headline'>
+        <h1>Setup your new Macbook for web development is boring.</h1>
+        <p>Talus is a bash script to automate download &amp; setting up your Mac OS X development environment</p>
+        <h5><span>Meet Talus &darr;</span></h5>
+      </div>
+    </div>
+    <video autoplay loop muted>
+      <source src="https://dl.dropboxusercontent.com/u/3522/talus.webm" type="video/webm">
+      <source src="https://dl.dropboxusercontent.com/u/3522/talus.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class='header'>
+    <div class='left'>
+      <h1><b>Talus</b></h1>
+      <ul>
+        <li><a href='https://github.com/juanbrujo/Talus'>View on GitHub</a></li>
+        <li><a href='https://github.com/juanbrujo/Talus/issues'>Issues</a></li>
+      </ul>
+    </div>
+    <div class="right">
+      <!-- GitHub buttons: see http://ghbtns.com -->
+      <iframe src="http://ghbtns.com/github-btn.html?user=juanbrujo&amp;repo=Talus&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+    </div>
+  </div>
+
+  <div class='content-root'>
+    <div class='menubar'>
+      <div class='menu section' role='flatdoc-menu'></div>
+    </div>
+    <div role='flatdoc-content' class='content'></div>
+  </div>
+
+</body>
+</html>
