@@ -1,4 +1,5 @@
-  #!/bin/sh
+#!/bin/sh
+
 # Set the colours you can use
 black='\033[0;30m'
 white='\033[0;37m'
@@ -78,7 +79,7 @@ binaries=(
 echo "Installing binaries..."
 brew install ${binaries[@]}
 
-echo "cleaning up"
+echo "Cleaning up"
 brew cleanup
 
 echo "Installing Oh-my-zsh "
@@ -115,7 +116,7 @@ apps=(
 	sip
 	telegram
 )
-echo "installing apps..."
+echo "Installing apps..."
 brew cask install ${apps[@]}
 
 # Cask I use for development
@@ -130,10 +131,16 @@ devel_apps=(
 	virtualbox
 	github-desktop
 )
-echo "installing devel apps..."
+echo "Installing devel apps..."
 brew cask install ${devel_apps[@]}
 
-echo "download mysql..."
+# Heroku
+echo ""
+echo "Installing Heroku-Toolbelt"
+brew install heroku-toolbelt
+brew install parity
+
+echo "Downloading MySQL..."
 brew install mysql
 
 echo ""
@@ -215,7 +222,7 @@ devel_quicklook=(
 	webpquicklook
 	suspicious-package
 )
-echo "installing quicklook helpers..."
+echo "Installing quicklook helpers..."
 brew cask install ${devel_quicklook[@]}
 
 echo ""

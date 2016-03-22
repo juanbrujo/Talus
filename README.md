@@ -20,6 +20,7 @@ Talus is a `bash` script to automate download & setting up your Mac OS X develop
 - `node`
 - `nginx`
 - `mysql`
+- `heroku-toolbelt`
 
 
 **Common apps (customize if needed):**
