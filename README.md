@@ -9,6 +9,7 @@ Talus is a `bash` script to automate download & setting up your Mac OS X develop
 - [Homebrew](http://brew.sh/) 
 - [Cask](http://caskroom.io/)
 - [Oh my zsh](http://ohmyz.sh/)
+- tmux, vim
 - OS X tools
 
 
@@ -19,7 +20,10 @@ Talus is a `bash` script to automate download & setting up your Mac OS X develop
 - `ffmpeg`
 - `node`
 - `nginx`
+- `ruby`
 - `mysql`
+- `postgre`
+- `redis`
 - `heroku-toolbelt`
 
 

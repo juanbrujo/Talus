@@ -67,7 +67,7 @@ brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 echo 'export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"' >> ~/.zshrc
 
-# Brew packages that I use a lot
+# Brew packages commonly used
 binaries=(
  	wget
 	curl
@@ -87,12 +87,18 @@ wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 
 echo "Installing cask "
 brew install caskroom/cask/brew-cask
+
 # Alternate cask versions
 brew tap caskroom/versions
+
 # I like the symlinks to be in /Applications instead of the default cask config
 echo 'export HOMEBREW_CASK_OPTS="--appdir=/Applications"' >> ~/.zshrc
-#
-# Some cask apps that I use.
+
+# tmux, vim
+brew install tmux
+brew install vim
+
+# Some cask apps
 apps=(
 	dropbox
 	disk-inventory-x
@@ -140,8 +146,35 @@ echo "Installing Heroku-Toolbelt"
 brew install heroku-toolbelt
 brew install parity
 
-echo "Downloading MySQL..."
+# Databases
+echo "Downloading Databases ..."
 brew install mysql
+brew info mysql
+brew install postgresql
+brew install redis
+
+# Ruby
+echo "Installing Ruby ..."
+brew install rbenv
+brew install ruby-build
+
+echo "Configuring Ruby ..."
+find_latest_ruby() {
+  rbenv install -l | grep -v - | tail -1 | sed -e 's/^ *//'
+}
+
+ruby_version="$(find_latest_ruby)"
+append_to_zshrc 'eval "$(rbenv init - --no-rehash)"' 1
+eval "$(rbenv init -)"
+
+if ! rbenv versions | grep -Fq "$ruby_version"; then
+  RUBY_CONFIGURE_OPTS=--with-openssl-dir=/usr/local/opt/openssl rbenv install -s "$ruby_version"
+fi
+
+rbenv global "$ruby_version"
+rbenv shell "$ruby_version"
+gem update --system
+
 
 echo ""
 cecho "##############################################" $red
