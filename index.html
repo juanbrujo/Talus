@@ -5,14 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width">
 
-  <title>Talus</title>
+  <title>Talus - a bash script to automate download &amp; setting up your Mac OS X development environment</title>
    <!-- Meta -->
   <meta content="Talus" property="og:title">
   <meta content="Talus is a bash script to automate download &amp; setting up your Mac OS X development environment." name="description">
   <meta content="https://dl.dropboxusercontent.com/u/3522/talus-social.png" property="og:image">
   <!-- Flatdoc theme -->
   <link href='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/style.css' rel='stylesheet'>
-  <link  href='http://ricostacruz.com/flatdoc/support/theme.css' rel='stylesheet'>
+  <link href='http://ricostacruz.com/flatdoc/support/theme.css' rel='stylesheet'>
   <style type="text/css">
   video {
     position: fixed;
@@ -28,6 +28,14 @@
   .in {
     background: radial-gradient( circle at top, rgba(81, 48, 87, 0.4), rgba(25, 31, 44, 1) );
   }
+  @media (max-width: 480px) {
+    .title-card {
+        padding: 0;
+    }
+    .in {
+      padding: 60px 5px;
+    }
+  }
   body:not(.big-h3) .content h3 {
     font-size: 1.3em;
   }
@@ -42,6 +50,7 @@
   }
   .header h1 {
     color: #fff;
+    font-size: 16px;
   }
   .header li a {
     color: #fff;
@@ -85,7 +94,7 @@
       <div class='headline'>
         <h1>Setup your new Macbook for web development is boring.</h1>
         <p>Talus is a bash script to automate download &amp; setting up your Mac OS X development environment</p>
-        <h5><span>Meet Talus &darr;</span></h5>
+        <h5><span>Talus</span> automates the setup</h5>
       </div>
     </div>
     <video autoplay loop muted>
