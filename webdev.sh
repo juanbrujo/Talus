@@ -51,6 +51,10 @@ cecho "Install npm-check-updates -g"  $white
 npm install -g npm-check-updates
 
 echo ""
+cecho "Install Webpack -g"  $white
+npm install -g webpack
+
+echo ""
 cecho "Done!" $white
 echo ""
 cecho "###############################################################################" $white

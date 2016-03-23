@@ -2,10 +2,10 @@
 
 Talus is a `bash` script to automate download & setting up your Mac OS X development environment. The idea is to automate the tedious work of setting up a brand new Mac or start a fresh install of a troubled one, with special care of web development tools and configurations.
 
-![Talus Robot](https://dl.dropboxusercontent.com/u/3522/talus.png)
+![Talus Robot](https://robohash.org/talus)
 
 
-### Talus base installs
+### _Talus_ base installs
 - [Homebrew](http://brew.sh/) 
 - [Cask](http://caskroom.io/)
 - [Oh my zsh](http://ohmyz.sh/)
@@ -110,14 +110,17 @@ In a separate bash script, there's some useful global npm modules:
 
 `./start.sh`
 
-_Go get a cold beer and take a nap_
-
-_Maybe you'll be prompted for root password_
-
 **Run additional npm global modules:**
 
 `./webdev.sh`
 
+--
+
+_Go get a cold beer and take a nap. At least you'll have 15 minutes repending of your internet connection._
+
+_Maybe you'll be prompted for root password._
+
+--
 
 ### Why _Talus_ ?
 
@@ -132,4 +135,4 @@ The script is based in:
 * [bootstrap-osx-devel-enviroment](https://github.com/carlosveloso/bootstrap-osx-devel-enviroment)
 * [Hacker's Guide to Setting up Your Mac](http://lapwinglabs.com/blog/hacker-guide-to-setting-up-your-mac)
 * [OSX for Hackers: Yosemite/Mavericks Edition](https://gist.github.com/brandonb927/3195465)
-* Character free by [vectorcharacters.net](http://vectorcharacters.net/)
+* Robot character by [RoboHash](https://robohash.org/)
