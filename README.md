@@ -25,6 +25,7 @@ Talus is a `bash` script to automate download & setting up your Mac OS X develop
 - `postgre`
 - `redis`
 - `heroku-toolbelt`
+- `nvm`
 
 
 **Common apps (customize if needed):**
@@ -99,6 +100,7 @@ In a separate bash script, there's some useful global npm modules:
 - `GruntJS`
 - `Bower`
 - `npm-check-updates`
+- `Webpack`
 
 ### Use
 

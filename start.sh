@@ -74,6 +74,7 @@ binaries=(
 	ffmpeg
 	node
 	nginx
+  nvm
 )
 
 echo "Installing binaries..."
