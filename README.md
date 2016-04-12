@@ -101,6 +101,7 @@ In a separate bash script, there's some useful global npm modules:
 - `Bower`
 - `npm-check-updates`
 - `Webpack`
+- `Express`
 
 ### Use
 

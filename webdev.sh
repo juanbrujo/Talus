@@ -55,6 +55,14 @@ cecho "Install Webpack -g"  $white
 npm install -g webpack
 
 echo ""
+cecho "Install Express -g"  $white
+npm install -g express
+
+echo ""
+cecho "Install Express Generator -g"  $white
+npm install -g express-generator
+
+echo ""
 cecho "Done!" $white
 echo ""
 cecho "###############################################################################" $white
