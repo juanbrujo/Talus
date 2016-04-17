@@ -103,25 +103,35 @@ In a separate bash script, there's some useful global npm modules:
 - `Webpack`
 - `Express`
 
-### Use
+## Use
 
-**Clone and make the file executable:**
+**Open _terminal.app_ and clone this repo:**
 
-`chmod a+x start.sh`
+```
+$ git clone https://github.com/juanbrujo/Talus.git && cd Talus
+```
 
-**Run it:**
+**Make the files executable (they already should be, but just in case):**
 
-`./start.sh`
+```
+$ chmod a+x start.sh && chmod a+x webdev.sh
+```
 
-**Run additional npm global modules:**
+**Run each or both of them:**
 
-`./webdev.sh`
+```
+$ ./start.sh
+```
+
+```
+$ ./webdev.sh
+```
 
 --
 
-_Go get a cold beer and take a nap. At least you'll have 15 minutes repending of your internet connection._
+Go get a cold beer and take a nap. At least you'll have 15 minutes of files download and setup (depending of your internet connection).
 
-_Maybe you'll be prompted for root password._
+**Maybe you'll be prompted for root password.**
 
 --
 
