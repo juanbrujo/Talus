@@ -179,7 +179,7 @@ gem update --system
 
 echo ""
 cecho "##############################################" $red
-cecho "#         STARTING SYSTEM CONFIG SCRIPT 		#" $red
+cecho "#         STARTING SYSTEM CONFIG SCRIPT      #" $red
 cecho "##############################################" $red
 echo ""
 echo "Continue?"
@@ -208,19 +208,39 @@ echo ""
 echo "Setting a blazingly fast keyboard repeat rate (ain't nobody got time fo special chars while coding!)"
 defaults write NSGlobalDomain KeyRepeat -int 0
 
+
+# m-cli
+echo "Installing m-cli ..."
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/rgcr/m-cli/master/install.sh | sh)"
+echo "export PATH=$PATH:/usr/local/m-cli" >> ~/.profile
+echo "export PATH=$PATH:/usr/local/m-cli" >> ~/.zshrc
+
 ###############################################################################
 # Sublime Text
 ###############################################################################
 echo ""
 echo "Enable Sublime Text 2 command line?"
 select yn in "Yes" "No"; do
-  case $yn in
-    Yes ) echo ""
-        echo "Linking Sublime Text command line"
-        ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
-        break;;
-    No ) break;;
-  esac
+case $yn in
+Yes ) break;;
+No ) echo "byebye"; exit 1;;
+esac
+done
+
+
+###############################################################################
+# m-cli
+###############################################################################
+echo ""
+echo "Install m-cli? (Swiss Army Knife for Mac OS X)"
+select yn in "Yes" "No"; do
+case $yn in
+Yes ) echo ""
+echo "Installing m-cli"
+
+break;;
+No ) break;;
+esac
 done
 
 ###############################################################################
@@ -231,7 +251,7 @@ done
 
 echo ""
 cecho "##############################################" $red
-cecho "#         STARTING QUICKLOOK HELPERS 		#" $red
+cecho "#         STARTING QUICKLOOK HELPERS         #" $red
 cecho "##############################################" $red
 echo ""
 echo "Install s useful Quick Look plugins for developers"
