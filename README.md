@@ -1,6 +1,6 @@
 # Talus
 
-Talus is a `bash` script to automate download & setting up your Mac OS X development environment. The idea is to automate the tedious work of setting up a brand new Mac or start a fresh install of a troubled one, with special care of web development tools and configurations.
+Talus is a `bash` script to automate download & setup your Mac OS X development environment. The idea is to automate the tedious work of setting up a brand new Mac or start a fresh install of a recent formatted one, with special care of web development tools and configurations.
 
 ![Talus Robot](https://robohash.org/talus)
 
@@ -129,7 +129,7 @@ $ ./webdev.sh
 
 --
 
-Go get a cold beer and take a nap. At least you'll have 15 minutes of files download and setup (depending of your internet connection).
+Go get a cold beer or take a nap. You'll have at least 15 minutes of setup and files being downloaded (depending of your internet connection).
 
 **Maybe you'll be prompted for root password.**
 
