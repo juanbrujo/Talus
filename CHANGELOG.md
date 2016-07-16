@@ -4,3 +4,4 @@
 * 20160322: added `heroku-toolbelt`, `vim`,`tux`, `ruby`, `postgresql`, `redis`.
 * 20160323: added `webpack`.
 * 20160324: added `nvm` as requested.
+* 20160715: added `m-cli` [link](https://github.com/rgcr/m-cli)
