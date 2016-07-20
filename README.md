@@ -64,6 +64,7 @@ Talus is a `bash` script to automate download & setup your Mac OS X development 
 - `opera`
 - `virtualbox`
 - `github-desktop`
+- `hyperterm`
 
 
 **Fixes some OSX annoyances:**
@@ -102,6 +103,7 @@ In a separate bash script, there's some useful global npm modules:
 - `npm-check-updates`
 - `Webpack`
 - `Express`
+- `m-cli`
 
 ## Use
 
