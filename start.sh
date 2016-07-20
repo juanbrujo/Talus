@@ -137,6 +137,7 @@ devel_apps=(
 	opera
 	virtualbox
 	github-desktop
+	hyperterm
 )
 echo "Installing devel apps..."
 brew cask install ${devel_apps[@]}
