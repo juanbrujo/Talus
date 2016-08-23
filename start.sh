@@ -128,7 +128,7 @@ brew cask install ${apps[@]}
 
 # Cask I use for development
 devel_apps=(
-	iterm
+	iterm2
 	atom
 	sublime-text
 	macdown
