@@ -103,7 +103,12 @@ In a separate bash script, there's some useful global npm modules:
 - `npm-check-updates`
 - `Webpack`
 - `Express`
+- `docker`
 - `m-cli`
+- `react-li`
+- `angular-cli`
+- `ember-cli`
+- `yeoman (yo)`
 
 ## Use
 
