@@ -79,6 +79,10 @@ cecho "Install Ember CLI -g"  $white
 npm install -g ember-cli
 
 echo ""
+cecho "Install Yeoman CLI (yo) -g"  $white
+npm install -g yo
+
+echo ""
 cecho "Done!" $white
 echo ""
 cecho "###############################################################################" $white
