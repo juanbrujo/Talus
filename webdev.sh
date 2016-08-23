@@ -63,6 +63,22 @@ cecho "Install Express Generator -g"  $white
 npm install -g express-generator
 
 echo ""
+cecho "Install React CLI -g"  $white
+npm install -g react-cli
+
+echo ""
+cecho "Install Docker -g"  $white
+npm install -g docker
+
+echo ""
+cecho "Install Angular CLI -g"  $white
+npm install -g angular-cli
+
+echo ""
+cecho "Install Ember CLI -g"  $white
+npm install -g ember-cli
+
+echo ""
 cecho "Done!" $white
 echo ""
 cecho "###############################################################################" $white
