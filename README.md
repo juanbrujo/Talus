@@ -55,7 +55,7 @@ Talus is a `bash` script to automate download & setup your Mac OS X development 
 
 **Apps for development:**
 
-- `iterm`
+- `iterm2`
 - `atom`
 - `sublime-text`
 - `macdown`
@@ -141,6 +141,10 @@ Go get a cold beer or take a nap. You'll have at least 15 minutes of setup and f
 **Maybe you'll be prompted for root password.**
 
 --
+
+### BETA
+
+I've added a `localhost.sh` to help configure a localhost environment for MacOSX. It is still under watch, it isn't fully tested yet.
 
 ### Why _Talus_ ?
 

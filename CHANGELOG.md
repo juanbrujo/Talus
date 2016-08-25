@@ -5,3 +5,4 @@
 * 20160323: added `webpack`.
 * 20160324: added `nvm` as requested.
 * 20160715: added `m-cli` [link](https://github.com/rgcr/m-cli)
+* 20160823: added several cli's: `react`, `docker`, `angular`, `ember`, `yeoman`
