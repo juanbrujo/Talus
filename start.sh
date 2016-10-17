@@ -142,12 +142,12 @@ devel_apps=(
 echo "Installing devel apps..."
 brew cask install ${devel_apps[@]}
 
-# Heroku
+# Yarn
 echo ""
 echo "Installing Yarn"
 brew install yarn
 
-# Yarn
+# Heroku
 echo ""
 echo "Installing Heroku-Toolbelt"
 brew install heroku-toolbelt
