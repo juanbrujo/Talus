@@ -74,7 +74,7 @@ binaries=(
 	ffmpeg
 	node
 	nginx
-  nvm
+	nvm
 )
 
 echo "Installing binaries..."
@@ -143,6 +143,11 @@ echo "Installing devel apps..."
 brew cask install ${devel_apps[@]}
 
 # Heroku
+echo ""
+echo "Installing Yarn"
+brew install yarn
+
+# Yarn
 echo ""
 echo "Installing Heroku-Toolbelt"
 brew install heroku-toolbelt
