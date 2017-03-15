@@ -83,6 +83,10 @@ cecho "Install Yeoman CLI (yo) -g"  $white
 npm install -g yo
 
 echo ""
+cecho "Install VueJS CLI (yo) -g"  $white
+npm install -g vue-cli
+
+echo ""
 cecho "Done!" $white
 echo ""
 cecho "###############################################################################" $white
