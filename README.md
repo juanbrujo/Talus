@@ -109,6 +109,7 @@ In a separate bash script, there's some useful global npm modules:
 - `angular-cli`
 - `ember-cli`
 - `yeoman (yo)`
+- `vue-cli`
 
 ## Use
 
