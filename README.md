@@ -35,7 +35,6 @@ Talus is a `bash` script to automate download & setup your Mac OS X development 
 - `mplayerx`
 - `vlc`
 - `skype`
-- `airmail-amt`
 - `transmit`
 - `vox`
 - `iresize`
@@ -43,7 +42,6 @@ Talus is a `bash` script to automate download & setup your Mac OS X development 
 - `paparazzi`
 - `the-unarchiver`
 - `unrarx`
-- `miro-video-converter`
 - `adium`
 - `evernote`
 - `torbrowser`
@@ -56,7 +54,7 @@ Talus is a `bash` script to automate download & setup your Mac OS X development 
 **Apps for development:**
 
 - `iterm2`
-- `atom`
+- `VSCode`
 - `sublime-text`
 - `macdown`
 - `firefox`
@@ -64,7 +62,7 @@ Talus is a `bash` script to automate download & setup your Mac OS X development 
 - `opera`
 - `virtualbox`
 - `github-desktop`
-- `hyperterm`
+- `hyper`
 
 
 **Fixes some OSX annoyances:**

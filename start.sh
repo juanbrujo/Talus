@@ -106,7 +106,6 @@ apps=(
 	mplayerx
 	vlc
 	skype
-	airmail-amt
 	transmit
 	vox
 	iresize
@@ -114,7 +113,6 @@ apps=(
 	paparazzi
 	the-unarchiver
 	unrarx
-	miro-video-converter
 	adium
 	evernote
 	torbrowser
@@ -134,10 +132,10 @@ devel_apps=(
 	macdown
 	firefox
 	google-chrome
-	opera
 	virtualbox
 	github-desktop
-	hyperterm
+	hyper
+  visual-studio-code
 )
 echo "Installing devel apps..."
 brew cask install ${devel_apps[@]}
