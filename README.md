@@ -141,9 +141,21 @@ Go get a cold beer or take a nap. You'll have at least 15 minutes of setup and f
 
 --
 
-### BETA
+### Localhost
 
-I've added a `localhost.sh` to help configure a localhost environment for MacOSX. It is still under watch, it isn't fully tested yet.
+The file `localhost.sh` helps to configure a localhost environment for MacOSX El Capitan and upper versions. To use it, same as the other ones:
+
+```
+$ chmod a+x localhost.sh
+```
+
+``
+$ ./localhost.sh
+```
+
+**Maybe you'll be prompted for root password.**
+
+--
 
 ### Why _Talus_ ?
 
