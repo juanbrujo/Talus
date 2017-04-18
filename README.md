@@ -149,7 +149,7 @@ The file `localhost.sh` helps to configure a localhost environment for MacOSX El
 $ chmod a+x localhost.sh
 ```
 
-``
+```
 $ ./localhost.sh
 ```
 
