@@ -49,6 +49,8 @@ Talus is a `bash` script to automate download & setup your Mac OS X development 
 - `slack`
 - `sip`
 - `telegram`
+- `franz`
+- `rambox`
 
 
 **Apps for development:**
@@ -59,11 +61,11 @@ Talus is a `bash` script to automate download & setup your Mac OS X development 
 - `macdown`
 - `firefox`
 - `google-chrome`
-- `opera`
 - `virtualbox`
 - `github-desktop`
 - `hyper`
-
+- `sequel-pro`
+- `mamp`
 
 **Fixes some OSX annoyances:**
 
