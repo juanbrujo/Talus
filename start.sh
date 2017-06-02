@@ -120,6 +120,9 @@ apps=(
 	slack
 	sip
 	telegram
+	franz
+	rambox
+	
 )
 echo "Installing apps..."
 brew cask install ${apps[@]}
@@ -127,7 +130,6 @@ brew cask install ${apps[@]}
 # Cask I use for development
 devel_apps=(
 	iterm2
-	atom
 	sublime-text
 	macdown
 	firefox
@@ -135,7 +137,10 @@ devel_apps=(
 	virtualbox
 	github-desktop
 	hyper
-  visual-studio-code
+	sourcetree
+	visual-studio-code
+	sequel-pro
+	mamp
 )
 echo "Installing devel apps..."
 brew cask install ${devel_apps[@]}
