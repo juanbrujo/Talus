@@ -105,7 +105,7 @@ In a separate bash script, there's some useful global npm modules:
 - `Express`
 - `docker`
 - `m-cli`
-- `react-li`
+- `react-cli`
 - `angular-cli`
 - `ember-cli`
 - `yeoman (yo)`
