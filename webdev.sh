@@ -35,18 +35,6 @@ select yn in "Yes" "No"; do
 done
 
 echo ""
-cecho "Install GulpJS -g"  $white
-npm install -g gulp
-
-echo ""
-cecho "Install GruntJS CLI -g"  $white
-npm install -g grunt-cli
-
-echo ""
-cecho "Install Bower -g"  $white
-npm install -g bower
-
-echo ""
 cecho "Install npm-check-updates -g"  $white
 npm install -g npm-check-updates
 
@@ -73,14 +61,6 @@ npm install -g docker
 echo ""
 cecho "Install Angular CLI -g"  $white
 npm install -g angular-cli
-
-echo ""
-cecho "Install Ember CLI -g"  $white
-npm install -g ember-cli
-
-echo ""
-cecho "Install Yeoman CLI (yo) -g"  $white
-npm install -g yo
 
 echo ""
 cecho "Install VueJS CLI (yo) -g"  $white
