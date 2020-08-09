@@ -6,3 +6,4 @@
 * 20160324: added `nvm` as requested.
 * 20160715: added `m-cli` [link](https://github.com/rgcr/m-cli)
 * 20160823: added several cli's: `react`, `docker`, `angular`, `ember`, `yeoman`
+* 20200808: removed several deprecated and unused apps / services

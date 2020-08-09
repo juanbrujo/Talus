@@ -31,25 +31,11 @@ Talus is a `bash` script to automate download & setup your Mac OS X development 
 **Common apps (customize if needed):**
 
 - `dropbox`
-- `disk-inventory-x`
-- `mplayerx`
 - `vlc`
-- `skype`
-- `transmit`
 - `vox`
-- `iresize`
-- `mou`
-- `paparazzi`
 - `the-unarchiver`
-- `unrarx`
-- `adium`
-- `evernote`
-- `torbrowser`
-- `transmission`
 - `slack`
-- `sip`
 - `telegram`
-- `franz`
 - `rambox`
 
 
@@ -61,11 +47,8 @@ Talus is a `bash` script to automate download & setup your Mac OS X development 
 - `macdown`
 - `firefox`
 - `google-chrome`
-- `virtualbox`
-- `github-desktop`
 - `hyper`
 - `sequel-pro`
-- `mamp`
 
 **Fixes some OSX annoyances:**
 
@@ -97,9 +80,6 @@ In a separate bash script, there's some useful global npm modules:
 
 **Specific npm global modules for webdev:**
 
-- `Gulp`
-- `GruntJS`
-- `Bower`
 - `npm-check-updates`
 - `Webpack`
 - `Express`
@@ -107,8 +87,6 @@ In a separate bash script, there's some useful global npm modules:
 - `m-cli`
 - `react-cli`
 - `angular-cli`
-- `ember-cli`
-- `yeoman (yo)`
 - `vue-cli`
 
 ## Use

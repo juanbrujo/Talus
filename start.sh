@@ -102,25 +102,11 @@ brew install vim
 # Some cask apps
 apps=(
 	dropbox
-	disk-inventory-x
-	mplayerx
 	vlc
-	skype
-	transmit
 	vox
-	iresize
-	mou
-	paparazzi
 	the-unarchiver
-	unrarx
-	adium
-	evernote
-	torbrowser
-	transmission
 	slack
-	sip
 	telegram
-	franz
 	rambox
 	
 )
@@ -134,13 +120,10 @@ devel_apps=(
 	macdown
 	firefox
 	google-chrome
-	virtualbox
-	github-desktop
 	hyper
 	sourcetree
 	visual-studio-code
 	sequel-pro
-	mamp
 )
 echo "Installing devel apps..."
 brew cask install ${devel_apps[@]}
