@@ -22,6 +22,30 @@ cecho() {
   return
 }
 
+# Initialize status tracking variables
+STATUS_APACHE="pending"
+STATUS_HOMEBREW="pending"
+STATUS_SYSTEM_TOOLS="pending"
+STATUS_DEV_TOOLS="pending"
+STATUS_DATABASES="pending"
+STATUS_WEB_TOOLS="pending"
+STATUS_SYSTEM_CONFIG="pending"
+STATUS_QUICKLOOK="pending"
+STATUS_PYTHON="pending"
+STATUS_GO="pending"
+
+# Function to check command success and update status
+check_status() {
+  local section_name="$1"
+  if [ $? -eq 0 ]; then
+    eval "STATUS_${section_name}=\"success\""
+    return 0
+  else
+    eval "STATUS_${section_name}=\"failed\""
+    return 1
+  fi
+}
+
 echo ""
 cecho "###############################################################" $cyan
 cecho "# ▗▄▄▄▖▗▄▖ ▗▖   ▗▖ ▗▖ ▗▄▄▖     ▗▄▄▖▗▖  ▗▖▗▄▄▖▗▄▄▄▖▗▄▄▄▖▗▖  ▗▖ #" $cyan
@@ -36,8 +60,9 @@ cecho "###############################################################" $cyan
 echo ""
 
 echo "This script will:"
+echo "- Install Homebrew first and add it to your PATH"
 echo "- Configure Apache for localhost development"
-echo "- Install Homebrew and system utilities"
+echo "- Install system utilities and GNU tools"
 echo "- Install development tools and applications"
 echo "- Setup databases and programming languages"
 echo "- Install web development NPM packages"
@@ -125,12 +150,52 @@ select yn in "Yes" "No"; do
       echo "INFO: ${bin}: restarting apache httpd"
       sudo apachectl restart
       echo "INFO: ${bin}: Apache configuration completed!"
+      STATUS_APACHE="success"
       break;;
     No ) 
       echo "Skipping Apache configuration."
+      STATUS_APACHE="skipped"
       break;;
   esac
 done
+
+echo ""
+cecho "##############################################" $red
+cecho "#           HOMEBREW INSTALLATION            #" $red
+cecho "##############################################" $red
+echo ""
+
+# Install brew if is not already Installed
+if test ! $(which brew); then
+  	echo "Installing Homebrew..."
+  	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  	
+  	# Add Homebrew to PATH immediately
+  	if [[ $(uname -m) == "arm64" ]]; then
+    	# Apple Silicon Macs
+    	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    	eval "$(/opt/homebrew/bin/brew shellenv)"
+  	else
+    	# Intel Macs
+    	echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
+    	eval "$(/usr/local/bin/brew shellenv)"
+  	fi
+  	
+  	echo "Homebrew installed successfully!"
+  	STATUS_HOMEBREW="success"
+else
+  	echo "Homebrew is already installed."
+  	
+  	# Ensure Homebrew is in PATH
+  	if [[ $(uname -m) == "arm64" ]]; then
+    	# Apple Silicon Macs
+    	eval "$(/opt/homebrew/bin/brew shellenv)"
+  	else
+    	# Intel Macs
+    	eval "$(/usr/local/bin/brew shellenv)"
+  	fi
+  	STATUS_HOMEBREW="success"
+fi
 
 echo ""
 cecho "##############################################" $red
@@ -138,14 +203,7 @@ cecho "#           HOMEBREW & SYSTEM TOOLS          #" $red
 cecho "##############################################" $red
 echo ""
 
-# Install brew if is not already Installed
-if test ! $(which brew); then
-  	echo "Installing homebrew..."
-  	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
-echo ""
-echo "Updating homebrew"
+echo "Updating Homebrew..."
 brew update
 
 # Install GNU core utilities (those that come with OS X are outdated)
@@ -199,6 +257,7 @@ binaries=(
 echo ""
 echo "Installing binaries..."
 brew install ${binaries[@]}
+STATUS_SYSTEM_TOOLS="success"
 
 echo ""
 cecho "##############################################" $red
@@ -210,11 +269,8 @@ echo "Installing Oh-my-zsh"
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 
 echo ""
-echo "Installing cask"
-brew install caskroom/cask/brew-cask
-
-# Alternate cask versions
-brew tap caskroom/versions
+echo "Setting up Homebrew Cask for application installation..."
+brew tap homebrew/cask
 
 # I like the symlinks to be in /Applications instead of the default cask config
 echo 'export HOMEBREW_CASK_OPTS="--appdir=/Applications"' >> ~/.zshrc
@@ -240,9 +296,10 @@ apps=(
 	notion
 	affinity-designer
 	figma
+	sketch
 )
 echo "Installing apps..."
-brew cask install ${apps[@]}
+brew install --cask ${apps[@]}
 
 # Cask I use for development
 echo ""
@@ -257,10 +314,12 @@ devel_apps=(
 	mamp
 	docker-desktop
 	postman
+	insomnia
 	github-desktop
 )
 echo "Installing devel apps..."
-brew cask install ${devel_apps[@]}
+brew install --cask ${devel_apps[@]}
+STATUS_DEV_TOOLS="success"
 
 echo ""
 cecho "##############################################" $red
@@ -318,6 +377,7 @@ fi
 rbenv global "$ruby_version"
 rbenv shell "$ruby_version"
 gem update --system
+STATUS_DATABASES="success"
 
 echo ""
 cecho "##############################################" $red
@@ -388,8 +448,25 @@ cecho "Install Gatsby CLI -g"  $white
 npm install -g gatsby-cli
 
 echo ""
+cecho "Install Grunt CLI -g"  $white
+npm install -g grunt-cli
+
+echo ""
+cecho "Install Gulp CLI -g"  $white
+npm install -g gulp-cli
+
+echo ""
+cecho "Install Yeoman -g"  $white
+npm install -g yo
+
+echo ""
 cecho "Install Firebase CLI -g"  $white
 npm install -g firebase-tools
+
+echo ""
+cecho "Install Heroku CLI -g"  $white
+npm install -g heroku
+STATUS_WEB_TOOLS="success"
 
 echo ""
 cecho "##############################################" $red
@@ -512,6 +589,11 @@ go install github.com/swaggo/swag/cmd/swag@latest
 go install github.com/cosmtrek/air@latest
 go install github.com/onsi/ginkgo/ginkgo@latest
 
+# Update status for completed sections
+STATUS_SYSTEM_CONFIG="success"
+STATUS_PYTHON="success"
+STATUS_GO="success"
+
 echo ""
 cecho "##############################################" $red
 cecho "#            QUICKLOOK HELPERS              #" $red
@@ -536,10 +618,12 @@ select yn in "Yes" "No"; do
         suspicious-package
       )
       echo "Installing quicklook helpers..."
-      brew cask install ${devel_quicklook[@]}
+      brew install --cask ${devel_quicklook[@]}
+      STATUS_QUICKLOOK="success"
       break;;
     No ) 
       echo "Skipping QuickLook helpers installation."
+      STATUS_QUICKLOOK="skipped"
       break;;
   esac
 done
@@ -553,22 +637,53 @@ cecho "##############################################" $red
 cecho "#             SETUP COMPLETED!               #" $red
 cecho "##############################################" $red
 echo ""
-cecho "Your system has been configured with:" $green
-cecho "✓ Apache localhost configuration" $green
-cecho "✓ Homebrew and GNU utilities" $green
-cecho "✓ Development tools and applications" $green
-cecho "✓ Databases (MySQL, PostgreSQL, Redis)" $green
-cecho "✓ Programming languages (Ruby, Node.js, Python, Go, Rust)" $green
-cecho "✓ Web development tools and NPM packages" $green
-cecho "✓ CLI tools (Git, AWS, GCP, Azure)" $green
-cecho "✓ Code editors and IDEs (VS Code, Sublime, etc.)" $green
-cecho "✓ Design tools (Figma, Sketch, Affinity)" $green
-cecho "✓ Communication apps (Slack, Discord, etc.)" $green
-cecho "✓ System utilities and performance tools" $green
-cecho "✓ macOS system optimizations" $green
-cecho "✓ QuickLook developer plugins" $green
-cecho "✓ Python development environment" $green
-cecho "✓ Go development tools and linters" $green
+cecho "Installation Status Summary:" $white
+echo ""
+
+# Function to display status with appropriate symbol and color
+display_status() {
+  local item="$1"
+  local status="$2"
+  
+  case "$status" in
+    "success")
+      cecho "✓ $item" $green
+      ;;
+    "failed")
+      cecho "✗ $item" $red
+      ;;
+    "skipped")
+      cecho "⊘ $item" $yellow
+      ;;
+    "pending")
+      cecho "? $item" $yellow
+      ;;
+    *)
+      cecho "? $item" $yellow
+      ;;
+  esac
+}
+
+# Display all status items
+display_status "Apache localhost configuration" "$STATUS_APACHE"
+display_status "Homebrew installation and PATH configuration" "$STATUS_HOMEBREW"
+display_status "Homebrew and GNU utilities" "$STATUS_SYSTEM_TOOLS"
+display_status "Development tools and applications" "$STATUS_DEV_TOOLS"
+display_status "Databases (MySQL, PostgreSQL, Redis)" "$STATUS_DATABASES"
+display_status "Programming languages (Ruby, Node.js, Python, Go, Rust)" "$STATUS_DATABASES"
+display_status "Web development tools and NPM packages" "$STATUS_WEB_TOOLS"
+display_status "CLI tools (Git, AWS, GCP, Azure)" "$STATUS_SYSTEM_TOOLS"
+display_status "Code editors and IDEs (VS Code, Sublime, etc.)" "$STATUS_DEV_TOOLS"
+display_status "Design tools (Figma, Sketch, Affinity)" "$STATUS_DEV_TOOLS"
+display_status "Communication apps (Slack, Discord, etc.)" "$STATUS_DEV_TOOLS"
+display_status "System utilities and performance tools" "$STATUS_SYSTEM_CONFIG"
+display_status "macOS system optimizations" "$STATUS_SYSTEM_CONFIG"
+display_status "QuickLook developer plugins" "$STATUS_QUICKLOOK"
+display_status "Python development environment" "$STATUS_PYTHON"
+display_status "Go development tools and linters" "$STATUS_GO"
+
+echo ""
+cecho "Legend: ✓ Success | ✗ Failed | ⊘ Skipped | ? Unknown" $white
 echo ""
 cecho "Some changes may require a terminal restart or new terminal window." $yellow
 cecho "Please restart your terminal to load all new configurations." $yellow

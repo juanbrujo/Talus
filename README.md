@@ -91,70 +91,6 @@ $ ./setup.sh
 
 ---
 
-## 📖 Usage
-
-### Single Command Setup
-```bash
-$ ./setup.sh
-```
-
-The script will:
-1. Display the beautiful Talus ASCII art header
-2. Ask for confirmation to proceed
-3. Request sudo privileges for system-level changes
-4. Guide you through each installation section with interactive prompts
-5. Configure Apache for localhost development
-6. Install all tools and applications
-7. Set up development environments for multiple languages
-8. Optimize macOS system settings
-9. Display a comprehensive completion summary
-
-### Interactive Sections
-The script includes interactive prompts for:
-- **Apache Configuration:** Enable localhost development
-- **QuickLook Plugins:** Install developer-focused file preview helpers
-- **Confirmation Steps:** Ensure you review each major section
-
----
-
-## 🔧 Individual Scripts
-
-While `setup.sh` contains everything, the original individual scripts are still available:
-
-### Apache Localhost Setup
-```bash
-$ chmod a+x localhost.sh
-$ ./localhost.sh
-```
-
-### Web Development NPM Packages
-```bash
-$ chmod a+x webdev.sh
-$ ./webdev.sh
-```
-
-### Complete System Setup (Original)
-```bash
-$ chmod a+x start.sh
-$ ./start.sh
-```
-
----
-
-## ⚡ Features
-
-- **🎨 Beautiful ASCII Art Branding** - Professional Talus-themed header
-- **🔄 Interactive Prompts** - User-friendly guided installation
-- **🛡️ Safe Operations** - Automatic backups and error handling
-- **📦 Smart Detection** - Skips already-installed packages
-- **🎯 Organized Sections** - Clear separation of installation types
-- **✅ Completion Summary** - Detailed list of everything installed
-- **🔧 System Optimization** - Comprehensive macOS tweaks
-- **🌍 Multi-Language Support** - Python, Ruby, Go, Rust, JavaScript
-- **☁️ Cloud Integration** - AWS, GCP, Azure, Firebase, Heroku
-
----
-
 ## 📋 System Requirements
 
 - **Operating System:** macOS (tested on El Capitan and newer)
@@ -167,9 +103,6 @@ $ ./start.sh
 ## ⏱️ Installation Time
 
 - **Typical Duration:** 15-30 minutes (depending on internet connection)
-- **Fast Internet:** 15-20 minutes
-- **Standard Internet:** 25-30 minutes
-- **Slow Internet:** 30+ minutes
 
 *Perfect time to grab a coffee! ☕*
 
