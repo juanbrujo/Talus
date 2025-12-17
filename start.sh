@@ -103,27 +103,25 @@ brew install vim
 apps=(
 	dropbox
 	vlc
-	vox
+	spotify
 	the-unarchiver
 	slack
-	telegram
-	rambox
-	
+	transmit
+	whatsapp
+	spark-app
+	notion
 )
 echo "Installing apps..."
 brew cask install ${apps[@]}
 
 # Cask I use for development
 devel_apps=(
-	iterm2
-	sublime-text
-	macdown
 	firefox
 	google-chrome
-	hyper
-	sourcetree
+	arc
 	visual-studio-code
 	sequel-pro
+	warp
 )
 echo "Installing devel apps..."
 brew cask install ${devel_apps[@]}
@@ -133,11 +131,10 @@ echo ""
 echo "Installing Yarn"
 brew install yarn
 
-# Heroku
+# Netlify
 echo ""
-echo "Installing Heroku-Toolbelt"
-brew install heroku-toolbelt
-brew install parity
+echo "Installing Netlify CLI"
+brew install netlify-cli
 
 # Databases
 echo "Downloading Databases ..."
@@ -206,18 +203,6 @@ echo "Installing m-cli ..."
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/rgcr/m-cli/master/install.sh | sh)"
 echo "export PATH=$PATH:/usr/local/m-cli" >> ~/.profile
 echo "export PATH=$PATH:/usr/local/m-cli" >> ~/.zshrc
-
-###############################################################################
-# Sublime Text
-###############################################################################
-echo ""
-echo "Enable Sublime Text 2 command line?"
-select yn in "Yes" "No"; do
-case $yn in
-Yes ) break;;
-No ) echo "byebye"; exit 1;;
-esac
-done
 
 
 ###############################################################################

@@ -63,8 +63,12 @@ cecho "Install Angular CLI -g"  $white
 npm install -g angular-cli
 
 echo ""
-cecho "Install VueJS CLI (yo) -g"  $white
+cecho "Install VueJS CLI -g"  $white
 npm install -g vue-cli
+
+echo ""
+cecho "Install Vite -g"  $white
+npm install -g vite
 
 echo ""
 cecho "Done!" $white
