@@ -16,6 +16,8 @@ $ ./setup.sh
 
 **That's it!** The script will guide you through the entire setup process with interactive prompts.
 
+> For more visual App and Libraries installs, try [InstallKit](https://www.installkit.app/).
+
 ---
 
 ## ✨ What Talus Sets Up
